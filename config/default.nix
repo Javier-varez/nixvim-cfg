@@ -39,6 +39,38 @@
     gitgutter.enable = true;
     trim.enable = true;
     nvim-tree.enable = true;
+    oil.enable = true;
+    treesitter.enable = true;
+    lazygit.enable = true;
+    notify = {
+      enable = true;
+      backgroundColour = "#1e1e2e";
+      fps = 60;
+      render = "default";
+      timeout = 500;
+      topDown = true;
+    };
+    gitsigns = {
+      enable = true;
+      settings.current_line_blame = true;
+    };
+    noice.enable = true;
+
+    lsp = {
+      enable = true;
+      servers = {
+        clangd.enable = true;
+        gopls = {
+          enable = true;
+          autostart = true;
+        };
+        rust-analyzer = {
+          enable = true;
+          installCargo = false;
+          installRustc = false;
+        };
+      };
+    };
   };
 
   keymaps = [
