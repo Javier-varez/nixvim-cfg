@@ -56,8 +56,49 @@
     };
     noice.enable = true;
 
+    cmp = {
+      enable = true;
+      autoEnableSources = true;
+
+      settings = {
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "path"; }
+          { name = "fish"; }
+          { name = "buffer"; }
+        ];
+
+        mapping = {
+          "<C-Space>" = "cmp.mapping.complete()";
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<C-e>" = "cmp.mapping.close()";
+          "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+          "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+        };
+      };
+    };
+
     lsp = {
       enable = true;
+
+      keymaps = {
+        diagnostic = {
+          "<space>e" = "open_float";
+        };
+        lspBuf = {
+          "K" = "hover";
+          "gD" = "declaration";
+          "gd" = "definition";
+          "gr" = "references";
+          "gi" = "implementation";
+          "<space>rn" = "rename";
+          "<space>ca" = "code_action";
+          "<C-k>" = "signature_help";
+          "<space><space>f" = "format";
+        };
+      };
       servers = {
         clangd.enable = true;
         gopls = {
