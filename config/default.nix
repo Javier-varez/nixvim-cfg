@@ -69,6 +69,17 @@
           installCargo = false;
           installRustc = false;
         };
+        nixd = {
+          enable = true;
+          settings = {
+            formatting = {
+              command = [ "nixfmt" ];
+            };
+            nixpkgs = {
+              expr = "import <nixpkgs> {}";
+            };
+          };
+        };
       };
     };
   };
