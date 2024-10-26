@@ -11,7 +11,7 @@
   };
 
   outputs =
-    { nixvim, flake-parts, ... }@inputs:
+    { self, nixvim, flake-parts, ... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
@@ -42,9 +42,18 @@
           };
 
           packages = {
+            inherit nvim;
+
             # Lets you run `nix run .` to start nixvim
             default = nvim;
           };
+
         };
+
+      flake = {
+       nixosModules.nixvim = { pkgs, ... }: {
+         environment.systemPackages = [ self.outputs.packages.${pkgs.system}.nvim ];
+       };
+      };
     };
 }
