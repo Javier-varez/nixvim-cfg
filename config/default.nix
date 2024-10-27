@@ -61,6 +61,20 @@
       pattern = [ "COMMIT_EDITMSG" ];
       command = "vim.wo.colorcolumn = \"50,72\"";
     }
+
+    {
+      event = [
+        "BufRead"
+        "BufNewFile"
+      ];
+      pattern = "*.nix";
+      callback = helpers.mkRaw ''
+        function()
+          vim.bo.tabstop = 2
+          vim.bo.shiftwidth = 2
+        end
+      '';
+    }
   ];
 
   opts = {
