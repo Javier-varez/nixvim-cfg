@@ -2,10 +2,17 @@
   # Import all your configuration modules here
   imports = [ ./bufferline.nix ];
 
+  extraConfigLuaPre = ''
+    local data_dir = vim.fn.stdpath('data')
+    vim.o.undodir = data_dir..'/vimdid'
+  '';
+
   colorschemes = {
     tokyonight = {
       enable = true;
       settings = {
+
+
         style = "night";
       };
     };
@@ -15,8 +22,37 @@
     mapleader = " ";
   };
 
+  autoCmd = [
+    {
+      event = [ "BufRead" "BufNewFile" ];
+      callback = {
+        __raw = ''
+        function()
+          vim.bo.undofile = true
+          vim.bo.expandtab = true
+          vim.bo.tabstop = 4
+          vim.bo.shiftwidth = 4
+        end
+        '';
+      };
+    }
+
+    {
+      event = [ "BufRead" "BufNewFile" ];
+      pattern = [ "*.go" "Makefile" "makefile" "*.mk" ];
+      command = "lua vim.bo.expandtab = false";
+    }
+
+    {
+      event = [ "BufRead" "BufNewFile" ];
+      pattern = [ "COMMIT_EDITMSG" ];
+      command = "vim.wo.colorcolumn = \"50,72\"";
+    }
+  ];
+
   opts = {
     number = true;
+
     relativenumber = true;
     colorcolumn = "80,100";
     scrolloff = 8;
