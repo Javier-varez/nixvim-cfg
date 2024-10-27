@@ -316,4 +316,6 @@
       action = "<C-w>s";
     }
   ];
+
+  clipboard.providers.xclip.enable = true;
 }
