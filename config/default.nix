@@ -270,6 +270,16 @@
     }
     {
       mode = "n";
+      key = "<leader>fh";
+      action = "<Cmd>Telescope oldfiles<CR>";
+    }
+    {
+      mode = "n";
+      key = "<leader>ss";
+      action = "<Cmd>Telescope spell_suggest<CR>";
+    }
+    {
+      mode = "n";
       key = "<leader>d";
       action = "<Cmd>bd<CR>";
     }
