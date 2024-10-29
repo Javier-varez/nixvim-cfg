@@ -100,7 +100,6 @@
     telescope.enable = true;
     web-devicons.enable = true;
     commentary.enable = true;
-    gitgutter.enable = true;
     trim.enable = true;
     nvim-tree.enable = true;
     oil.enable = true;
@@ -116,7 +115,12 @@
     };
     gitsigns = {
       enable = true;
-      settings.current_line_blame = true;
+      settings = {
+        current_line_blame = true;
+        current_line_blame_opts = {
+          delay = 1000;
+        };
+      };
     };
     noice.enable = true;
     alpha = {
