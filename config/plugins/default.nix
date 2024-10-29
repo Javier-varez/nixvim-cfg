@@ -15,5 +15,6 @@
     ./alpha.nix
     ./cmp.nix
     ./lsp.nix
+    ./lualine.nix
   ];
 }
