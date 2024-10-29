@@ -13,7 +13,7 @@
     tokyonight = {
       enable = true;
       settings = {
-        style = "night";
+        style = "moon";
       };
     };
   };
