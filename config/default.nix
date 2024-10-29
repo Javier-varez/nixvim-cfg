@@ -98,6 +98,7 @@
   plugins = {
     undotree.enable = true;
     telescope.enable = true;
+    web-devicons.enable = true;
     commentary.enable = true;
     gitgutter.enable = true;
     trim.enable = true;
@@ -172,7 +173,7 @@
           enable = true;
           autostart = true;
         };
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           installCargo = false;
           installRustc = false;
