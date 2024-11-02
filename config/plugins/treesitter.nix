@@ -3,6 +3,9 @@
     treesitter = {
       enable = true;
       settings = {
+        highlight = {
+          enable = true;
+        };
         ensure_installed = [
           "cpp"
           "c"
