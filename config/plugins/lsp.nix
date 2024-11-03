@@ -19,17 +19,22 @@
           "<space><space>f" = "format";
         };
       };
+
       servers = {
-        clangd.enable = true;
+        clangd = {
+          enable = true;
+        };
+
         gopls = {
           enable = true;
-          autostart = true;
         };
+
         rust_analyzer = {
           enable = true;
           installCargo = false;
           installRustc = false;
         };
+
         nixd = {
           enable = true;
           settings = {
@@ -41,6 +46,7 @@
             };
           };
         };
+
         lua_ls = {
           enable = true;
           extraOptions = helpers.mkRaw ''{
@@ -78,6 +84,37 @@
             end
           }'';
         };
+
+        cmake = {
+          enable = true;
+        };
+
+        dockerls = {
+          enable = true;
+        };
+
+        jedi_language_server = {
+          enable = true;
+        };
+
+        html = {
+          enable = true;
+        };
+
+        nushell = {
+          enable = true;
+        };
+
+        ltex = {
+          enable = true;
+          settings = {
+            ltex = {
+              language = "en-US";
+              languageToolHttpServerUri = "http://localhost:8875/";
+            };
+          };
+        };
+
       };
     };
   };
