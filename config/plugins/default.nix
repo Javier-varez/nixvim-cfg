@@ -1,20 +1,20 @@
 {
   # Import all pluging configs
   imports = [
-    ./bufferline.nix
-    ./undotree.nix
-    ./telescope.nix
-    ./web-devicons.nix
-    ./commentary.nix
-    ./trim.nix
-    ./nvim-tree.nix
-    ./treesitter.nix
-    ./notify.nix
-    ./gitsigns.nix
-    ./noice.nix
     ./alpha.nix
+    ./bufferline.nix
     ./cmp.nix
+    ./commentary.nix
+    ./gitsigns.nix
     ./lsp.nix
     ./lualine.nix
+    ./noice.nix
+    ./notify.nix
+    ./nvim-tree.nix
+    ./telescope.nix
+    ./treesitter.nix
+    ./trim.nix
+    ./undotree.nix
+    ./web-devicons.nix
   ];
 }
