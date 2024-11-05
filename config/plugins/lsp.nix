@@ -1,4 +1,4 @@
-{ helpers, ... }: {
+{ config, lib, extraPkgs, helpers, ... }: {
   plugins = {
     lsp = {
       enable = true;
@@ -23,6 +23,7 @@
       servers = {
         clangd = {
           enable = true;
+          package = lib.mkIf config.useDdlnConfig extraPkgs.ddln-llvm-14;
         };
 
         gopls = {
