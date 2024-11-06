@@ -60,5 +60,22 @@
         end
       '';
     }
+    {
+      event = [
+        "BufWritePre"
+      ];
+      pattern = [
+        "*.cc"
+        "*.hh"
+        "*.h"
+        "*.c"
+        "*.cpp"
+      ];
+      callback = helpers.mkRaw ''
+        function()
+          vim.lsp.buf.format()
+        end
+      '';
+    }
   ];
 }
