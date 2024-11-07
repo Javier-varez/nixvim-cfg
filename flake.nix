@@ -57,7 +57,7 @@
             # Lets you run `nix run .` to start nixvim
             default = nvim;
 
-            inherit (extraPkgs) ddln-llvm-14;
+            inherit (extraPkgs) ddln-llvm-14 ltex-ls;
           };
 
         };

@@ -114,6 +114,7 @@
               languageToolHttpServerUri = "http://localhost:8875/";
             };
           };
+          package = extraPkgs.ltex-ls;
         };
 
       };
