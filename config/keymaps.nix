@@ -63,7 +63,7 @@
     {
       mode = "n";
       key = "<leader>u";
-      action = "<Cmd>UndoTreeToggle<CR>";
+      action = "<Cmd>UndotreeToggle<CR>";
     }
     {
       mode = "n";
