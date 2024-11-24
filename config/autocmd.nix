@@ -70,12 +70,34 @@
         "*.h"
         "*.c"
         "*.cpp"
+        "*.rs"
+        "*.go"
       ];
       callback = helpers.mkRaw ''
-        function()
+        function(args)
+          if vim.g.disable_autoformat then
+            return
+          end
           vim.lsp.buf.format()
         end
       '';
     }
   ];
+
+  # Allow to enable/disable format on save
+  extraConfigLuaPost = ''
+    vim.g.disable_autoformat = false
+
+    vim.api.nvim_create_user_command("FormatDisable", function(args)
+      vim.g.disable_autoformat = true
+    end, {
+      desc = "Disable format on save",
+    })
+
+    vim.api.nvim_create_user_command("FormatEnable", function(args)
+      vim.g.disable_autoformat = false
+    end, {
+      desc = "Enable format on save",
+    })
+  '';
 }
