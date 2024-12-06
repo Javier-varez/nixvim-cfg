@@ -106,6 +106,10 @@
           enable = true;
         };
 
+        zls = {
+          enable = true;
+        };
+
         ltex = {
           enable = true;
           settings = {
