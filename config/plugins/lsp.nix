@@ -13,6 +13,7 @@
           "gd" = "definition";
           "gr" = "references";
           "gi" = "implementation";
+          "gt" = "type_definition";
           "<space>rn" = "rename";
           "<space>ca" = "code_action";
           "<C-k>" = "signature_help";
