@@ -11,6 +11,7 @@
     ./noice.nix
     ./notify.nix
     ./nvim-tree.nix
+    ./rustaceanvim.nix
     ./telescope.nix
     ./treesitter.nix
     ./trim.nix
