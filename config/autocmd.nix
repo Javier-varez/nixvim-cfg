@@ -44,7 +44,7 @@
         "BufNewFile"
       ];
       pattern = [ "COMMIT_EDITMSG" ];
-      command = "vim.wo.colorcolumn = \"50,72\"";
+      command = "lua vim.wo.colorcolumn = \"50,72\"";
     }
 
     {
