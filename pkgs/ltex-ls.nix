@@ -13,7 +13,7 @@ maven.buildMavenPackage {
   doCheck = false;
 
   mvnJdk = pkgs.jdk11;
-  mvnHash = "sha256-gkZMbwnlTT7uc9RT1h1nMN6ky+XJHEzOYXW0ZTtHOkY=";
+  mvnHash = "sha256-KA6R2AIjLrlgP1MO6uXwEl3TBDT5Cg5cqMXFfb3NNcE=";
 
   installPhase = ''
     runHook preInstall
