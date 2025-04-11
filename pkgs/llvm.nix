@@ -10,11 +10,9 @@ in
       cmake
     ];
 
-    src = pkgs.fetchFromGitHub {
-      owner = "daedaleanai";
-      repo = "llvm-project";
-      rev = "ddln-llvm-14";
-      sha256 = "sha256-a2bRuAqYq43a87bk9QQQtlVet60xYSsNBy28uG5SdjU=";
+    src = builtins.fetchGit {
+      url = "https://gitea.daedalean.ai/daedalean-github/llvm-project.git";
+      rev = "63505759149b7cddd5b37675e108b443f61e721a";
     };
 
     cmakeDir = "../llvm";
@@ -29,7 +27,7 @@ in
       "-DGCC_INSTALL_PREFIX=${pkgs.gcc}"
       "-DC_INCLUDE_DIRS=${stdenv.cc.libc_dev}/include"
       "-GNinja"
-      "-DLLVM_ENABLE_PROJECTS=clang;lld;clang-tools-extra"
+      "-DLLVM_ENABLE_PROJECTS=clang-tools-extra"
       "-DLLVM_BUILD_RUNTIMES=OFF"
       "-DCMAKE_BUILD_TYPE=Release"
       "-DLLVM_TARGETS_TO_BUILD=X86;ARM;AArch64"
