@@ -6,6 +6,7 @@
     ./autocmd.nix
     ./keymaps.nix
     ./plugins
+    ./filetype.nix
   ];
 
   options = {
