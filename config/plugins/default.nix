@@ -17,5 +17,6 @@
     ./trim.nix
     ./undotree.nix
     ./web-devicons.nix
+    ./neorg.nix
   ];
 }
