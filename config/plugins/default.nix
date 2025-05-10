@@ -6,8 +6,12 @@
     ./cmp.nix
     ./commentary.nix
     ./gitsigns.nix
+    ./image.nix
     ./lsp.nix
     ./lualine.nix
+    ./mkdnflow.nix
+    ./neogit.nix
+    ./neorg.nix
     ./noice.nix
     ./notify.nix
     ./nvim-tree.nix
@@ -17,6 +21,5 @@
     ./trim.nix
     ./undotree.nix
     ./web-devicons.nix
-    ./neorg.nix
   ];
 }
