@@ -9,6 +9,15 @@
         "core.concealer" = {
           __empty = null;
         };
+        "core.export" = {
+          __empty = null;
+        };
+        "core.export.markdown" = {
+          __empty = null;
+        };
+        "core.summary" = {
+          __empty = null;
+        };
         "core.dirman" = {
           config = {
             workspaces = {
