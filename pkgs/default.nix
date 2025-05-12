@@ -1,14 +1,10 @@
 {
   pkgs,
-  pkgsOld,
   ...
 }:
 let
   ltex-ls = pkgs.callPackage ./ltex-ls.nix { };
-  ddln-llvm-14 = pkgsOld.callPackage ./llvm.nix {
-    pkgs = pkgsOld;
-    inherit (pkgsOld) stdenv targetPlatform;
-  };
+  ddln-llvm-14 = pkgs.callPackage ./llvm.nix { };
 in
 {
   inherit ddln-llvm-14;

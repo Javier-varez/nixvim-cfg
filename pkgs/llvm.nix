@@ -3,7 +3,7 @@ let
   gccForLibs = stdenv.cc.cc;
 in
   stdenv.mkDerivation {
-    name = "ddln-llvm-14";
+    name = "ddln-llvm-17";
     nativeBuildInputs = with pkgs; [
       python3
       ninja
@@ -12,7 +12,7 @@ in
 
     src = builtins.fetchGit {
       url = "https://gitea.daedalean.ai/daedalean-github/llvm-project.git";
-      rev = "63505759149b7cddd5b37675e108b443f61e721a";
+      rev = "99c3ef8b067aee83ca36fb4bd0cc37f8fdeb31d1";
     };
 
     cmakeDir = "../llvm";
