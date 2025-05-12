@@ -6,7 +6,6 @@
     ./cmp.nix
     ./commentary.nix
     ./gitsigns.nix
-    ./image.nix
     ./lsp.nix
     ./lualine.nix
     ./mkdnflow.nix
