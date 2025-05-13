@@ -19,5 +19,8 @@
     swapfile = false;
     backup = false;
     mouse = "a";
+
+    concealcursor = "nv";
+    conceallevel = 2;
   };
 }

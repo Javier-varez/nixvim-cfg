@@ -7,7 +7,16 @@
           __empty = null;
         };
         "core.concealer" = {
-          __empty = null;
+          config = {
+            icon_preset = "diamond";
+            icons = {
+              code_block = {
+                conceal = true;
+                content_only = true;
+                width = "content";
+              };
+            };
+          };
         };
         "core.export" = {
           __empty = null;
