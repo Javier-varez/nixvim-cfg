@@ -24,7 +24,7 @@
       servers = {
         clangd = {
           enable = true;
-          package = lib.mkIf config.useDdlnConfig extraPkgs.ddln-llvm-14;
+          package = lib.mkIf config.useDdlnConfig extraPkgs.ddln-llvm-17;
         };
 
         gopls = {

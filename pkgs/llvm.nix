@@ -27,7 +27,7 @@ in
       "-DGCC_INSTALL_PREFIX=${pkgs.gcc}"
       "-DC_INCLUDE_DIRS=${stdenv.cc.libc_dev}/include"
       "-GNinja"
-      "-DLLVM_ENABLE_PROJECTS=clang-tools-extra"
+      "-DLLVM_ENABLE_PROJECTS=clang-tools-extra;clang"
       "-DLLVM_BUILD_RUNTIMES=OFF"
       "-DCMAKE_BUILD_TYPE=Release"
       "-DLLVM_TARGETS_TO_BUILD=X86;ARM;AArch64"
