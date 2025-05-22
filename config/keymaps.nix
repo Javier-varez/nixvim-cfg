@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   keymaps = [
     {
@@ -145,6 +146,44 @@
       mode = "n";
       key = "<A-s>";
       action = "<C-w>s";
+    }
+    {
+      mode = [
+        "i"
+        "s"
+      ];
+      key = "<Tab>";
+      action = lib.nixvim.mkRaw ''
+        function()
+          if vim.snippet.active({ direction = 1 }) then
+            return '<cmd>lua vim.snippet.jump(1)<cr>'
+          else
+            return '<Tab>'
+          end
+        end
+      '';
+      options = {
+        expr = true;
+      };
+    }
+    {
+      mode = [
+        "i"
+        "s"
+      ];
+      key = "<S-Tab>";
+      action = lib.nixvim.mkRaw ''
+        function()
+          if vim.snippet.active({ direction = -1 }) then
+            return '<cmd>lua vim.snippet.jump(-1)<cr>'
+          else
+            return '<S-Tab>'
+          end
+        end
+      '';
+      options = {
+        expr = true;
+      };
     }
   ];
 }
