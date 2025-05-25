@@ -10,9 +10,6 @@
     };
 
     flake-parts.url = "github:hercules-ci/flake-parts";
-
-    zig-asahi.url = "github:javier-varez/zig-asahi";
-    zig-asahi.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -20,7 +17,6 @@
       self,
       nixvim,
       flake-parts,
-      zig-asahi,
       ...
     }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -39,8 +35,6 @@
 
           extraPkgs = pkgs.callPackage ./pkgs { };
 
-          asahiPkgs = inputs.nixpkgs.legacyPackages.${system}.extend zig-asahi.overlays.zig-asahi;
-
           nixvimModuleTemplate =
             { config }:
             {
@@ -50,7 +44,6 @@
               # You can use `extraSpecialArgs` to pass additional arguments to your module files
               extraSpecialArgs = {
                 inherit extraPkgs;
-                inherit asahiPkgs;
               };
             };
           nvimTemplate =
@@ -61,7 +54,6 @@
 
           nvim = nvimTemplate { config = ./config; };
           nvim-ddln = nvimTemplate { config = ./config/ddln.nix; };
-          nvim-asahi = nvimTemplate { config = ./config/asahi.nix; };
         in
         {
           checks = {
@@ -74,7 +66,6 @@
           packages = {
             inherit nvim;
             inherit nvim-ddln;
-            inherit nvim-asahi;
 
             # Lets you run `nix run .` to start nixvim
             default = nvim;
@@ -89,12 +80,6 @@
           { pkgs, ... }:
           {
             environment.systemPackages = [ self.outputs.packages.${pkgs.system}.nvim ];
-          };
-
-        nixosModules.nixvim-asahi =
-          { pkgs, ... }:
-          {
-            environment.systemPackages = [ self.outputs.packages.${pkgs.system}.nvim-asahi ];
           };
       };
     };

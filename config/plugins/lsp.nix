@@ -1,4 +1,4 @@
-{ config, lib, extraPkgs, asahiPkgs, helpers, ... }: {
+{ config, lib, extraPkgs, helpers, ... }: {
   plugins = {
     lsp = {
       enable = true;
@@ -103,7 +103,6 @@
 
         zls = {
           enable = true;
-          package = lib.mkIf config.isAsahiLinux asahiPkgs.zls;
         };
 
         ltex = {

@@ -167,8 +167,7 @@
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim",
-        "zig-asahi": "zig-asahi"
+        "nixvim": "nixvim"
       }
     },
     "systems": {
@@ -198,26 +197,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "zig-asahi": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1735309393,
-        "narHash": "sha256-O0opUMuxFy9oAM7fH8i5YMxmQxNt3UGKq5EVFPYpp9U=",
-        "owner": "javier-varez",
-        "repo": "zig-asahi",
-        "rev": "daf91dc2797484e0ce29667e46bf851ff516b154",
-        "type": "github"
-      },
-      "original": {
-        "owner": "javier-varez",
-        "repo": "zig-asahi",
         "type": "github"
       }
     }

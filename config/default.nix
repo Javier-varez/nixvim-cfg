@@ -16,13 +16,6 @@
       example = true;
       description = "Whether to use the Daedalean configuration (custom llvm) or not";
     };
-
-    isAsahiLinux = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      example = true;
-      description = "Whether we are building nvim for asahi linux or not (to patch certain packages like zls).";
-    };
   };
 
   config = {
