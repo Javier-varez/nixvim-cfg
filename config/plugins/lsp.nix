@@ -119,7 +119,7 @@
         verible = {
           enable = true;
           extraOptions = {
-            cmd = ["verible-verilog-ls" "--rules_config_search"];
+            cmd = ["verible-verilog-ls" "--rules_config_search" "--indentation_spaces=4"];
           };
         };
 
