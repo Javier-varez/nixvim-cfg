@@ -6,7 +6,6 @@
     vim.o.undodir = data_dir..'/vimdid'
   '';
 
-
   autoCmd = [
     {
       event = [
@@ -72,6 +71,8 @@
         "*.cpp"
         "*.rs"
         "*.go"
+        "*.sv"
+        "*.v"
       ];
       callback = helpers.mkRaw ''
         function(args)
