@@ -116,6 +116,13 @@
           package = extraPkgs.ltex-ls;
         };
 
+        verible = {
+          enable = true;
+          extraOptions = {
+            cmd = ["verible-verilog-ls" "--rules_config_search"];
+          };
+        };
+
       };
     };
   };
