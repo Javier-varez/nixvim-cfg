@@ -25,6 +25,9 @@
         clangd = {
           enable = true;
           package = lib.mkIf config.useDdlnConfig extraPkgs.ddln-llvm-17;
+          extraOptions = {
+            cmd = ["clangd" "--query-driver=**/*"];
+          };
         };
 
         gopls = {
