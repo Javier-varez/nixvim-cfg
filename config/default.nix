@@ -1,12 +1,13 @@
-{ lib, helpers, ... }:
+{ lib, ... }:
 {
   imports = [
-    ./opts.nix
-    ./colorscheme.nix
     ./autocmd.nix
-    ./keymaps.nix
-    ./plugins
+    ./colorscheme.nix
+    ./custom_lua.nix
     ./filetype.nix
+    ./keymaps.nix
+    ./opts.nix
+    ./plugins
   ];
 
   options = {
