@@ -9,7 +9,7 @@
     keymaps = [
       {
         key = "<space>e";
-        action = "vim.diagnostic.open_float";
+        action = lib.nixvim.mkRaw "vim.diagnostic.open_float";
       }
       {
         key = "K";
