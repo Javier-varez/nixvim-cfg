@@ -4,7 +4,6 @@
     ./alpha.nix
     ./bufferline.nix
     ./cmp.nix
-    ./commentary.nix
     ./gitsigns.nix
     ./lualine.nix
     ./mkdnflow.nix
