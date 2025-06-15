@@ -6,6 +6,7 @@
     ./custom_lua.nix
     ./filetype.nix
     ./keymaps.nix
+    ./lsp.nix
     ./opts.nix
     ./plugins
   ];
