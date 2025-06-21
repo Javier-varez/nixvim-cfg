@@ -198,6 +198,33 @@
           filetypes = [ "zig" ];
         };
       };
+
+      lua_ls = {
+        enable = true;
+        settings = {
+          cmd = [
+            "lua-language-server"
+          ];
+          filetypes = [ "lua" ];
+          settings = {
+            Lua = {
+              runtime = {
+                version = "LuaJIT";
+              };
+              diagnostics = {
+                globals = [ "vim" ];
+              };
+              workspace = {
+                checkThirdParty = false;
+                library = [
+                  (lib.nixvim.mkRaw "vim.env.VIMRUNTIME")
+                  (lib.nixvim.mkRaw "vim.fn.stdpath('config')")
+                ];
+              };
+            };
+          };
+        };
+      };
     };
   };
 }
