@@ -23,6 +23,5 @@
   config = {
     # Enable clipboard copy and pasting using xclip
     clipboard.providers.xclip.enable = true;
-    impureRtp = true;
   };
 }

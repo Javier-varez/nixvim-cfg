@@ -30,12 +30,5 @@
         },
       },
     }
-
-    -- Allow us to use custom user config code without rebuilding nixvim
-    -- this is handy for testing, even though less reproducible
-    config_file = vim.fn.stdpath('config')..'/lua/custom_user.lua'
-    if vim.uv.fs_stat(config_file) then
-      require('custom_user')
-    end
   '';
 }
