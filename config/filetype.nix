@@ -3,7 +3,7 @@
   extraConfigLua = ''
     vim.filetype.add({
       pattern = {
-        ['.*\.bsv'] = 'verilog',
+        ['.*\\.bsv'] = 'verilog',
       }
     })
   '';
