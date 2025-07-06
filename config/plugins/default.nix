@@ -15,8 +15,10 @@
     ./nvim-tree.nix
     ./rustaceanvim.nix
     ./telescope.nix
+    ./todo-comments.nix
     ./treesitter.nix
     ./trim.nix
+    ./trouble.nix
     ./undotree.nix
     ./web-devicons.nix
   ];
