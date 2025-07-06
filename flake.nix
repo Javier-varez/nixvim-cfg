@@ -35,37 +35,34 @@
 
           extraPkgs = pkgs.callPackage ./pkgs { };
 
-          nixvimModuleTemplate =
-            { config }:
-            {
-              inherit pkgs;
-              module = import config; # import the module directly
+          nixvimModuleTemplate = overrides: {
+            inherit pkgs;
+            module =
+              { ... }:
+              {
+                imports = [ ./config ];
+              }
+              // overrides;
 
-              # You can use `extraSpecialArgs` to pass additional arguments to your module files
-              extraSpecialArgs = {
-                inherit extraPkgs;
-              };
+            # You can use `extraSpecialArgs` to pass additional arguments to your module files
+            extraSpecialArgs = {
+              inherit extraPkgs;
             };
-          nvimTemplate =
-            { config }:
-            nixvim'.makeNixvimWithModule (nixvimModuleTemplate {
-              inherit config;
-            });
+          };
+          nvimTemplate = overrides: nixvim'.makeNixvimWithModule (nixvimModuleTemplate overrides);
 
-          nvim = nvimTemplate { config = ./config; };
-          nvim-ddln = nvimTemplate { config = ./config/ddln.nix; };
         in
         {
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
             default = nixvimLib.check.mkTestDerivationFromNixvimModule (nixvimModuleTemplate {
-              config = ./config;
             });
           };
 
-          packages = {
-            inherit nvim;
-            inherit nvim-ddln;
+          packages = rec {
+            nvim = nvimTemplate { };
+            nvim-ddln = nvimTemplate { config.useDdlnLlvm = true; };
+            nvim-dev = nvimTemplate { config.enableDebugConfig = true; };
 
             # Lets you run `nix run .` to start nixvim
             default = nvim;

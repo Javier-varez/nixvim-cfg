@@ -65,7 +65,7 @@
 
       clangd = {
         enable = true;
-        package = lib.mkIf config.useDdlnConfig extraPkgs.ddln-llvm-17;
+        package = lib.mkIf config.useDdlnLlvm extraPkgs.ddln-llvm-17;
         settings = {
           cmd = [
             "clangd"

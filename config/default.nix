@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   imports = [
     ./autocmd.nix
@@ -12,16 +12,25 @@
   ];
 
   options = {
-    useDdlnConfig = lib.mkOption {
+    useDdlnLlvm = lib.mkOption {
       type = lib.types.bool;
       default = false;
       example = true;
-      description = "Whether to use the Daedalean configuration (custom llvm) or not";
+      description = "Whether to use the Daedalean llvm fork or not";
+    };
+
+    enableDebugConfig = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      example = true;
+      description = "Enables impure RTP so that one can use custom lua code for development without rebuilding nixvim";
     };
   };
 
   config = {
     # Enable clipboard copy and pasting using xclip
     clipboard.providers.xclip.enable = true;
+
+    impureRtp = config.enableDebugConfig;
   };
 }
