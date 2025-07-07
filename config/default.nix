@@ -33,13 +33,15 @@
 
     impureRtp = config.enableDebugConfig;
 
+    # When byte-compilation is enabled, lua-ls doesn't really work as nicely
+    # and does not show all the information. Therefore, in debug config we disable it
     performance.byteCompileLua = {
-      enable = true;
-      configs = true;
-      initLua = true;
-      luaLib = true;
-      nvimRuntime = true;
-      plugins = true;
+      enable = !config.enableDebugConfig;
+      configs = !config.enableDebugConfig;
+      initLua = !config.enableDebugConfig;
+      luaLib = !config.enableDebugConfig;
+      nvimRuntime = !config.enableDebugConfig;
+      plugins = !config.enableDebugConfig;
     };
   };
 }
