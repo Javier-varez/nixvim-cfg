@@ -1,6 +1,14 @@
-{ pkgs, ... }:
 {
-  extraPlugins = [
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  enablePlugin = !config.enableDebugConfig;
+in
+{
+  extraPlugins = lib.mkIf enablePlugin [
     (pkgs.vimUtils.buildVimPlugin {
       name = "dbt-nvim";
       src = pkgs.fetchFromGitHub {
@@ -12,5 +20,5 @@
     })
   ];
 
-  extraConfigLua = "require'dbt-nvim'.setup {}";
+  extraConfigLua = lib.mkIf enablePlugin "require'dbt-nvim'.setup {}";
 }
