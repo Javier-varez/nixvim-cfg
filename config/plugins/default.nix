@@ -13,6 +13,7 @@
     ./noice.nix
     ./notify.nix
     ./nvim-tree.nix
+    ./rainbow-delimiters.nix
     ./rustaceanvim.nix
     ./telescope.nix
     ./todo-comments.nix
