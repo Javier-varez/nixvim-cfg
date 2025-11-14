@@ -1,9 +1,9 @@
 {
   colorschemes = {
-    tokyonight = {
+    cyberdream = {
       enable = true;
       settings = {
-        style = "moon";
+        transparent = true;
       };
     };
   };
