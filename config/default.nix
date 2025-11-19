@@ -30,6 +30,7 @@
   config = {
     # Enable clipboard copy and pasting using xclip
     clipboard.providers.xclip.enable = true;
+    clipboard.providers.wl-copy.enable = true;
 
     impureRtp = config.enableDebugConfig;
 
