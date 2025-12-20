@@ -1,4 +1,4 @@
-{ helpers, ... }:
+{ lib, ... }:
 {
   # Tell nvim where to store the undo files
   extraConfigLuaPre = ''
@@ -12,7 +12,7 @@
         "BufRead"
         "BufNewFile"
       ];
-      callback = helpers.mkRaw ''
+      callback = lib.nixvim.mkRaw ''
         function()
           -- Enables the undo files
           vim.bo.undofile = true
@@ -52,7 +52,7 @@
         "BufNewFile"
       ];
       pattern = "*.nix";
-      callback = helpers.mkRaw ''
+      callback = lib.nixvim.mkRaw ''
         function()
           vim.bo.tabstop = 2
           vim.bo.shiftwidth = 2
@@ -74,7 +74,7 @@
         "*.sv"
         "*.v"
       ];
-      callback = helpers.mkRaw ''
+      callback = lib.nixvim.mkRaw ''
         function(args)
           if vim.g.disable_autoformat then
             return

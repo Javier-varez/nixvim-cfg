@@ -2,8 +2,10 @@
   plugins = {
     nvim-tree = {
       enable = true;
-      disableNetrw = true;
-      openOnSetup = true;
+      settings = {
+        disable_netrw = true;
+        open_on_setup = true;
+      };
     };
   };
 }

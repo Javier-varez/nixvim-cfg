@@ -55,7 +55,7 @@
 
     servers = {
       "*" = {
-        settings = {
+        config = {
           root_markers = [
             ".git"
             ".jj"
@@ -66,7 +66,7 @@
       clangd = {
         enable = true;
         package = lib.mkIf config.useDdlnLlvm extraPkgs.ddln-llvm-17;
-        settings = {
+        config = {
           cmd = [
             "clangd"
             "--query-driver=**/*"
@@ -89,7 +89,7 @@
 
       gopls = {
         enable = true;
-        settings = {
+        config = {
           cmd = [ "gopls" ];
           filetypes = [ "go" ];
         };
@@ -97,14 +97,14 @@
 
       nixd = {
         enable = true;
-        settings = {
+        config = {
           cmd = [
             "nixd"
             "--log=verbose"
           ];
           filetypes = [ "nix" ];
 
-          settings = {
+          config = {
             formatting = {
               command = [ "nixfmt" ];
               blah = "blu";
@@ -119,14 +119,14 @@
 
       ltex = {
         enable = true;
-        settings = {
+        config = {
           cmd = [
             "ltex-ls"
           ];
           filetypes = [
             "markdown"
           ];
-          settings = {
+          config = {
             ltex = {
               language = "en-US";
               languageToolHttpServerUri = "http://localhost:8875/";
@@ -138,7 +138,7 @@
 
       verible = {
         enable = true;
-        settings = {
+        config = {
           cmd = [
             "verible-verilog-ls"
             "--rules_config_search"
@@ -153,7 +153,7 @@
 
       cmake = {
         enable = true;
-        settings = {
+        config = {
           cmd = [ "cmake-language-server" ];
           filetypes = [ "cmake" ];
         };
@@ -161,7 +161,7 @@
 
       jedi_language_server = {
         enable = true;
-        settings = {
+        config = {
           cmd = [ "jedi-language-server" ];
           filetypes = [ "python" ];
         };
@@ -169,7 +169,7 @@
 
       dockerls = {
         enable = true;
-        settings = {
+        config = {
           cmd = [
             "docker-langserver"
             "--stdio"
@@ -180,7 +180,7 @@
 
       nushell = {
         enable = true;
-        settings = {
+        config = {
           cmd = [
             "nu"
             "--lsp"
@@ -191,7 +191,7 @@
 
       zls = {
         enable = true;
-        settings = {
+        config = {
           cmd = [
             "zls"
           ];
@@ -201,7 +201,7 @@
 
       lua_ls = {
         enable = true;
-        settings = {
+        config = {
           cmd = [
             "lua-language-server"
           ];

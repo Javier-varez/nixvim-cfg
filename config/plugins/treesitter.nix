@@ -16,7 +16,7 @@
         robot
         javascript
         vhdl
-        verilog
+        systemverilog
         yaml
         json
         toml
