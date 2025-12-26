@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   extraPkgs,
   ...
 }:
@@ -63,6 +64,10 @@
         };
       };
 
+      rust-analyzer = {
+        package = null;
+      };
+
       clangd = {
         enable = true;
         package = lib.mkIf config.useDdlnLlvm extraPkgs.ddln-llvm-17;
@@ -121,7 +126,7 @@
         enable = true;
         config = {
           cmd = [
-            "ltex-ls"
+            "ltex-ls-plus"
           ];
           filetypes = [
             "markdown"
@@ -133,7 +138,7 @@
             };
           };
         };
-        package = extraPkgs.ltex-ls;
+        package = pkgs.ltex-ls-plus;
       };
 
       verible = {
