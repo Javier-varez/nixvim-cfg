@@ -6,6 +6,7 @@
 }:
 {
   lsp = {
+    inlayHints.enable = true;
     keymaps = [
       {
         key = "<space>e";
