@@ -8,7 +8,7 @@
     -- Recently with nix 25.05, virtual text for error messages has stopped being shown inline.
     -- This overrides the diagnostics configuration to force-enable virtual_text.
     vim.diagnostic.config({
-      virtual_lines = true
+      virtual_text = true
     })
 
     -- rust-analyzer has a tendency to scan all roots of the repository and find all relevant files.
