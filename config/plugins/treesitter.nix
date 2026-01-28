@@ -42,7 +42,7 @@
 
   extraConfigLua = ''
     do
-      local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+      local parser_config = require("nvim-treesitter.parsers")
       parser_config.nu = {
         install_info = {
           url = "${pkgs.tree-sitter-grammars.tree-sitter-nu}",
