@@ -2,6 +2,7 @@
   config,
   lib,
   extraPkgs,
+  isDarwin,
   ...
 }:
 {
@@ -138,7 +139,7 @@
       };
 
       verible = {
-        enable = true;
+        enable = !isDarwin;
         config = {
           cmd = [
             "verible-verilog-ls"

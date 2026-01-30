@@ -47,6 +47,7 @@
             # You can use `extraSpecialArgs` to pass additional arguments to your module files
             extraSpecialArgs = {
               inherit extraPkgs;
+              inherit (pkgs.stdenv) isDarwin;
             };
           };
           nvimTemplate = overrides: nixvim'.makeNixvimWithModule (nixvimModuleTemplate overrides);
