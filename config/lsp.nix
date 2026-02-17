@@ -227,6 +227,19 @@
           };
         };
       };
+
+      ocamllsp = {
+        enable = true;
+
+        package = null;
+        config = {
+          cmd = [
+            "ocamllsp"
+          ];
+          filetypes = [ "ocaml" ];
+        };
+      };
+
     };
   };
 }
