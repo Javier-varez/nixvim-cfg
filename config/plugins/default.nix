@@ -23,5 +23,6 @@
     ./trouble.nix
     ./undotree.nix
     ./web-devicons.nix
+    ./yabt-nvim.nix
   ];
 }
