@@ -14,6 +14,7 @@
     ./noice.nix
     ./notify.nix
     ./nvim-tree.nix
+    ./octo-nvim.nix
     ./rainbow-delimiters.nix
     ./rustaceanvim.nix
     ./telescope.nix

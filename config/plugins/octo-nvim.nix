@@ -1,0 +1,7 @@
+{
+  plugins = {
+    octo = {
+      enable = true;
+    };
+  };
+}
