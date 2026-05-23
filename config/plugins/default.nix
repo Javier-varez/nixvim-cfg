@@ -16,6 +16,7 @@
     ./nvim-tree.nix
     ./octo-nvim.nix
     ./rainbow-delimiters.nix
+    ./render-markdown.nix
     ./rustaceanvim.nix
     ./telescope.nix
     ./todo-comments.nix

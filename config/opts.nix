@@ -21,6 +21,6 @@
     mouse = "a";
 
     concealcursor = "nv";
-    conceallevel = 2;
+    conceallevel = 0;
   };
 }
