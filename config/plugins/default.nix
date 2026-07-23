@@ -9,6 +9,7 @@
     ./gitsigns.nix
     ./lualine.nix
     ./mkdnflow.nix
+    ./navic.nix
     ./neogit.nix
     ./neorg.nix
     ./noice.nix
