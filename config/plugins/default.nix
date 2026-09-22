@@ -8,6 +8,7 @@
     ./dbt-nvim.nix
     ./gitsigns.nix
     ./lualine.nix
+    ./markdown-preview.nix
     ./mkdnflow.nix
     ./navic.nix
     ./neogit.nix
