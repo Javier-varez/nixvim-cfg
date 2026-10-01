@@ -4,7 +4,6 @@
     ./alpha.nix
     ./bufferline.nix
     ./cmp.nix
-    ./copilot-lua.nix
     ./dbt-nvim.nix
     ./gitsigns.nix
     ./lualine.nix
