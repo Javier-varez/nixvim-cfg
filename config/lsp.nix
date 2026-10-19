@@ -119,25 +119,6 @@
         };
       };
 
-      ltex = {
-        enable = true;
-        config = {
-          cmd = [
-            "ltex-ls"
-          ];
-          filetypes = [
-            "markdown"
-          ];
-          config = {
-            ltex = {
-              language = "en-US";
-              languageToolHttpServerUri = "http://localhost:8875/";
-            };
-          };
-        };
-        package = extraPkgs.ltex-ls;
-      };
-
       verible = {
         enable = !isDarwin;
         config = {
