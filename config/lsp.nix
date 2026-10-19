@@ -240,6 +240,18 @@
         };
       };
 
+      vtsls = {
+        enable = true;
+
+        config = {
+          cmd = [
+            "vtsls"
+            "--stdio"
+          ];
+          filetypes = [ "typescript" ];
+        };
+      };
+
     };
   };
 }
